@@ -69,19 +69,17 @@ public class TestFeature {
 		 }
 	 }		 
 	}
-
 	@Then("User click on add to cart button")
 	public void user_click_on_add_to_cart_button() throws InterruptedException {
 		
-     WebElement Add_to_cart_button = driver.findElement(By.xpath("//button[@name='add-to-cart-sauce-labs-fleece-jacket']"));
-     Add_to_cart_button.click();
-     
+        WebElement Add_to_cart_button = driver.findElement(By.xpath("//button[@name='add-to-cart-sauce-labs-fleece-jacket']"));
+        Add_to_cart_button.click(); 
 	}
 	@When("User click on cart")
 	public void user_click_on_cart() {
 	    
-     WebElement cart = driver.findElement(By.xpath("//a[@class='shopping_cart_link']"));
-     cart.click();	
+        WebElement cart = driver.findElement(By.xpath("//a[@class='shopping_cart_link']"));
+        cart.click();	
 
 //	 WebElement Remove_Button = driver.findElement(By.xpath("//button[text()='Remove']/self::button"));
 //	 Remove_Button.click();
@@ -91,12 +89,12 @@ public class TestFeature {
 	@When("User click on checkout button")
 	public void user_click_on_checkout_button() {
 	   
-	  By Checkout = By.xpath("//button[text()='Checkout' and @id='checkout']");	
+	By Checkout = By.xpath("//button[text()='Checkout' and @id='checkout']");	
 		
-	  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-	  wait.until(ExpectedConditions.presenceOfElementLocated(Checkout));
-	  driver.findElement(Checkout).click();
-	  System.out.println("Successfully clicked on checkout button");
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	wait.until(ExpectedConditions.presenceOfElementLocated(Checkout));
+	driver.findElement(Checkout).click();
+	System.out.println("Successfully clicked on checkout button");
 	}
 
 	@Then("User enters First Name, Last name and Zip Code")
@@ -120,18 +118,15 @@ public class TestFeature {
 	@When("User click on continue button")
 	public void user_click_on_continue_button() {
 		
-		WebElement Continue_Button = driver.findElement(By.xpath("//input[@id='continue' and @name='continue']"));
-		Continue_Button.click();
-		System.out.println("Successfully clicked on continue button");
-
+	WebElement Continue_Button = driver.findElement(By.xpath("//input[@id='continue' and @name='continue']"));
+	Continue_Button.click();
+	System.out.println("Successfully clicked on continue button");
 	}
-
 	@When("User click on Finish button")
 	public void user_click_on_finish_button() throws InterruptedException {
 	
-	 String product = driver.findElement(By.xpath("//div[text()='Sauce Labs Fleece Jacket']")).getText();
-		 
-	 if(product.equals("Sauce Labs Fleece Jacket']"))
+	String product = driver.findElement(By.xpath("//div[text()='Sauce Labs Fleece Jacket']")).getText();	 
+	if(product.equals("Sauce Labs Fleece Jacket']"))
 		 {		 
 			 System.out.println("Sauce Labs Fleece Jacket product is verified."); 
 		 }	 
@@ -141,25 +136,22 @@ public class TestFeature {
 	    
 	 System.out.println("Product is verified and successfully clicked on finish button");
 	}
-
 	@Then("Verify order placed message")
 	public void verify_order_placed_message() {
 	   	 
-	 String Order_Placed = driver.findElement(By.xpath("//div[@id='checkout_complete_container']/h2[text()='Thank you for your order!']")).getText();	
-	 if(Order_Placed.equals("Thank you for your order!"));
+	String Order_Placed = driver.findElement(By.xpath("//div[@id='checkout_complete_container']/h2[text()='Thank you for your order!']")).getText();	
+	if(Order_Placed.equals("Thank you for your order!"));
 	 {
 		 System.out.println("Sauce Labs Fleece Jacket order is successfully placed");
 	 }
 	}
-
 	@When("User click on back to home button")
 	public void user_click_on_back_to_home_button() throws InterruptedException {
 	    
-	 WebElement Home_Button = driver.findElement(By.xpath("//button[text()='Back Home']/self::button"));	
-	 Home_Button.click();    
-	 System.out.println("Successfully clicked on back home button");
+	WebElement Home_Button = driver.findElement(By.xpath("//button[text()='Back Home']/self::button"));	
+	Home_Button.click();    
+	System.out.println("Successfully clicked on back home button");
 	}
-
 	@When("User click on product button")
 	public void user_click_on_product_button() throws InterruptedException {
 	    
@@ -167,14 +159,11 @@ public class TestFeature {
 	 product_button.click();
 	 System.out.println("Successfully clicked on product button");
 	}
-
 	@Then("User click on logout button")
 	public void user_click_on_logout_button() throws InterruptedException {
 	    
-	 WebElement Logout = driver.findElement(By.xpath("//a[text()='Logout']/parent::nav/a[3]"));
-	 Logout.click();	 
-	 System.out.println("Successfully clicked on logout button");
+	WebElement Logout = driver.findElement(By.xpath("//a[text()='Logout']/parent::nav/a[3]"));
+	Logout.click();	 
+	System.out.println("Successfully clicked on logout button");
 	}
-	
-	
 	}
